@@ -5,7 +5,8 @@
     ],
     "compilerOptions": {
         "outDir": "./dist/",
-        "noImplicitAny": true,
+        "noImplicitAny": false,
+        "downlevelIteration": true,
         "module": "es6",
         "target": "es2015",
         "allowJs": true,

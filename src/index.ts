@@ -1,9 +1,14 @@
-import {from} from "rxjs";
+import {of, combineLatest} from "rxjs";
 
-function getName(name: string) {
-    from([1, 2, 3]).subscribe((data: number) => {
-        console.log(data);
-    });
-}
+const height$ = of(1.73, 1.85, 1.55);
+const weight$ = of(80, 72);
 
-getName('tony');
+
+
+const bim$ = combineLatest([height$, weight$]);
+bim$.subscribe(([h, w]) => {
+    console.log(w / (h * h));
+});
+
+
+
