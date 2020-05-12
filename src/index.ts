@@ -1,5 +1,9 @@
+import {from} from "rxjs";
+
 function getName(name: string) {
-    console.log('name', name);
+    from([1, 2, 3]).subscribe((data: number) => {
+        console.log(data);
+    });
 }
 
 getName('tony');
