@@ -24,6 +24,12 @@ module.exports = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
     },
+    devtool: "inline-source-map",
+    devServer: {
+        contentBase: './dist',
+        overlay: true,
+        quiet: true,
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
