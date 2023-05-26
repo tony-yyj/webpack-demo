@@ -1,8 +1,9 @@
 // import { ethers } from "https://cdnjs.cloudflare.com/ajax/libs/ethers/6.4.0/ethers.min.js";
 import {ethers, keccak256, AbiCoder} from "./ethers.js"
-import * as crypto from "crypto";
-
-window.userWalletAddress = null
+import crypto from "crypto";
+import {AES} from 'crypto-js';
+// const crypto = await require('crypto');
+// const crypto = window.crypto;
 const chainId = await window.ethereum.chainId;
 const loginButton = document.getElementById('loginButton')
 const userWallet = document.getElementById('userWallet')
@@ -216,10 +217,12 @@ function signOutOfMetaMask() {
     }, 200)
 }
 
-function generateKeyPair() {
+function generateKeyPair1() {
     const publicKey = "0xpublickey"
     const privateKey = "0xprivatekey"
-    crypto.generateKeyPair('ed25519')
+    crypto.generateKeyPair('ed25519', 'pem', (res) => {
+        console.log('res', res)
+    })
     return [publicKey, privateKey]
 }
 
@@ -251,3 +254,5 @@ function string2Bytes32(rawBrokerId) {
     // console.log(ethers.encodeBytes32String(rawBrokerId))
     return keccak256(ethers.encodeBytes32String(rawBrokerId))
 }
+
+generateKeyPair1();
