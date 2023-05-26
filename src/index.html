@@ -1,13 +1,31 @@
-<!doctype html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>webpack demo</title>
+    <title>Web3 Metamask Login</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
 
+<body class="flex w-screen h-screen ">
+<div class="flex-col space-y-2 ">
+    <button id='loginButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+        Login with MetaMask
+    </button>
+    <p id='userWallet' class='text-lg text-gray-600 my-2'></p>
+    <button id='registerButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+        Send Registration
+    </button>
+    <button id='addKeyButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+        Add Orderly Key
+    </button>
+    <input type="number" id="expiration" value=0 class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+    <button id='withdrawButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+        Withdraw Token
+    </button>
+    <input type="number" id="tokenAmount" value=0 class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+    <p id='userSignautre' class='text-lg text-gray-600 my-2'></p>
+
+</div>
+<script type = "module" src="./index.js">
+</script>
 </body>
+
 </html>
